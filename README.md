@@ -61,6 +61,8 @@ El ejemplo anterior nos muestra que la clase **PagoController** tiene por respon
 
 Un proyecto de Spring Boot que siga correctamente este principio, tendrá una estructura similar a la de la siguiente imagen. En dicha imagen se pueden obervar carpetas o "packages" que contienen archivos con una única responsabilidad. El uso de las carpetas sirve para identificar la responsabilidad que tienen los archivos contenidos.
 
+<img width="200" alt="S_ProjectStrct" src="https://github.com/Endorsmoch/PrincipiosSolid/assets/78102161/37e5e254-958e-451e-828f-53cd1d8c035a">
+
 ## 2. Open/Closed Principle
 Este es un principio que hace referencia a que el código debe estar creado para ser extendido y no modificado. La idea es que el código que se genere posteriormente a la creación de una entidad de código, debe estar construida considerando el código previo y no modificar lo que ya estaba escrito, ahí se observa el cerrado a modificación.
 
@@ -136,6 +138,8 @@ Robert C. Martin dijo:
 > “Make fine grained interfaces that are client specific.”
 
 Lo anterior puede entenderse como, haz tantas interfaces sean necesarias mientras tengan a un único cliente específico. En un sistema de microservicios con Spring Boot esto puede verse reflejado en la estructura del proyecto, en donde en el paquete *Repository* se encuentran las interfaces que se comunican con el repositorio para permanencia de los datos. Existen tantas interfaces como entidades o clases **Entity**:
+<img width="194" alt="I_ProjectStrct" src="https://github.com/Endorsmoch/PrincipiosSolid/assets/78102161/423f5c1e-b3b7-4e7b-b9b6-74a73a268b0f">
+
 
 ## 5. Dependency Inversion Principle
 Este principio indica que se debe depender de las abstracciones y no de las clases concretas con las que cuenta el sistema, de esta manera reducimos el acoplamiento en el mismo. Esto puede lograrse evitando las implementaciones directas de clases en específico y haciendo uso de interfaces. Esto puede observarse en el snipet utilizado en el tercer principio. Una clase con la anotación **@Service** no hace uso de una clase que se comunica con la base de datos, sino con una interfaz.
