@@ -101,6 +101,36 @@ public class KardexAlumno {
 }
 ```
 ## 3. Liskov Substitution Principle
+La Sustitución de Liskov es el principio con el que se pretende que las clases que se construyan extendiendo a una clase, superior, puedan ser utilizadas en lugar de la subclase padre y esa sustitución no debería afectar en lo absoluto al funcionamiento del sistema. Ejemplo de ello podría ser que las clases que deriven de otra, no arrojen excepciones que la clase padre no arroja.
+
+El ejemplo anterior lo podemos observar dentro de un proyecto de Spring Boot en las entidades que extienden a **Service** haciendo uso de la anotación **@Service**. Dichas clases no arrojan nuevas excepciones, simplemente definen los métodos para la conexión con la base de datos haciendo uso de una Interfaz *Repository*:
+
+```java
+@Service
+@Log4j2
+public class AlumnoService {
+    @Autowired
+    private AlumnoRepository alumnoRepository;
+
+    public Alumno createAlumno(Alumno alumno){
+        log.info("crea alumno: "+alumno.toString());
+        return alumnoRepository.save(alumno);
+    }
+
+    public Alumno updateAlumno(Alumno alumno){
+        log.info("actualiza alumno: "+alumno.toString());
+        return alumnoRepository.save(alumno);
+    }
+
+    public List<Alumno> getAllAlumnos(){
+        return alumnoRepository.findAll();
+    }
+
+    public void deleteAlumno(Long id){
+        alumnoRepository.deleteById(id);
+    }
+}
+```
 ## 4. Interface Segregation Principle
 ## 5. Dependency Inversion Principle
 
