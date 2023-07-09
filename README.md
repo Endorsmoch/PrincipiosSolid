@@ -132,5 +132,10 @@ public class AlumnoService {
 }
 ```
 ## 4. Interface Segregation Principle
+Robert C. Martin dijo:
+> “Make fine grained interfaces that are client specific.”
+
+Lo anterior puede entenderse como, haz tantas interfaces sean necesarias mientras tengan a un único cliente específico. En un sistema de microservicios con Spring Boot esto puede verse reflejado en la estructura del proyecto, en donde en el paquete *Repository* se encuentran las interfaces que se comunican con el repositorio para permanencia de los datos. Existen tantas interfaces como entidades o clases **Entity**:
+
 ## 5. Dependency Inversion Principle
 
