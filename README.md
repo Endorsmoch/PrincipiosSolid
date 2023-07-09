@@ -138,6 +138,7 @@ Robert C. Martin dijo:
 > “Make fine grained interfaces that are client specific.”
 
 Lo anterior puede entenderse como, haz tantas interfaces sean necesarias mientras tengan a un único cliente específico. En un sistema de microservicios con Spring Boot esto puede verse reflejado en la estructura del proyecto, en donde en el paquete *Repository* se encuentran las interfaces que se comunican con el repositorio para permanencia de los datos. Existen tantas interfaces como entidades o clases **Entity**:
+
 <img width="194" alt="I_ProjectStrct" src="https://github.com/Endorsmoch/PrincipiosSolid/assets/78102161/423f5c1e-b3b7-4e7b-b9b6-74a73a268b0f">
 
 
