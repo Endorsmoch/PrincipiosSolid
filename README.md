@@ -138,4 +138,4 @@ Robert C. Martin dijo:
 Lo anterior puede entenderse como, haz tantas interfaces sean necesarias mientras tengan a un único cliente específico. En un sistema de microservicios con Spring Boot esto puede verse reflejado en la estructura del proyecto, en donde en el paquete *Repository* se encuentran las interfaces que se comunican con el repositorio para permanencia de los datos. Existen tantas interfaces como entidades o clases **Entity**:
 
 ## 5. Dependency Inversion Principle
-
+Este principio indica que se debe depender de las abstracciones y no de las clases concretas con las que cuenta el sistema, de esta manera reducimos el acoplamiento en el mismo. Esto puede lograrse evitando las implementaciones directas de clases en específico y haciendo uso de interfaces. Esto puede observarse en el snipet utilizado en el tercer principio. Una clase con la anotación **@Service** no hace uso de una clase que se comunica con la base de datos, sino con una interfaz.
